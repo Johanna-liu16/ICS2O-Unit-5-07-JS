@@ -7,26 +7,25 @@
 /**
  * Check servie worker.
  */
-if (navigator.serviceWorker) {
+ if (navigator.serviceWorker) {
   navigator.serviceWorker.register("/ICS2O-PWA-Test/sw.js", {
     scope: "/ICS2O-PWA-Test/",
   })
 }
 
 ;("use strict")
+
 /**
- * This function calculates area of a parrallelogram.
+ * Input
  */
-function calculate() {
-  // input
-  const length = parseInt(document.getElementById("length-of-pyramid").value)
-  const width = parseInt(document.getElementById("width-of-pyramid").value)
-  const height = parseInt(document.getElementById("height-of-pyramid").value)
-
-  // process
-  const volume = (length * width * height) / 3
-
-  // output
-  document.getElementById("answers").innerHTML =
-    "Volume is: " + volume.toFixed(2) + " cm³"
+function myButtonClicked() {
+  const counter = parseInt(document.getElementById("counter").value);
+  let answer = 0;
+    
+    for (let addedNumber = 1; addedNumber <= counter; addedNumber++) {
+      answer += addedNumber;
+    }
+            
+  document.getElementById("answer").innerHTML = 
+    "The sum is: " + answer;
 }
